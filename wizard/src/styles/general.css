@@ -1,0 +1,70 @@
+.underlay-container {
+  background-color: transparent;
+  pointer-events: none;
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.react-pricing-wizard .flex {
+  display: flex;
+}
+
+.react-pricing-wizard .space-between {
+  justify-content: space-between;
+}
+
+.react-pricing-wizard .space-around {
+  justify-content: space-around;
+}
+
+.react-pricing-wizard .column {
+  flex-direction: column;
+}
+
+.react-pricing-wizard .relative {
+  position: relative;
+}
+
+.react-pricing-wizard .absolute {
+  position: absolute;
+}
+
+.react-pricing-wizard .align-center {
+  align-items: center;
+}
+
+.react-pricing-wizard .justify-center {
+  justify-content: center;
+}
+
+.react-pricing-wizard .m-0 {
+  margin: 0;
+}
+
+.react-pricing-wizard .mr-1 {
+  margin-right: 0.25rem;
+}
+
+.react-pricing-wizard .h-100 {
+  height:  100%;
+}
+
+.react-pricing-wizard .w-100 {
+  width:  100%;
+}
+
+.react-pricing-wizard .max-w-90 {
+  max-width:  90%;
+}
+
+.react-pricing-wizard .transition {
+  transition:  0.2s;
+}
+
+.shadow-red {
+  box-shadow: 1px 1px 25px 16px yellow;
+}
+
