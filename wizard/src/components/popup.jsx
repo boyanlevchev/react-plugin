@@ -176,7 +176,7 @@ function Popup({closeWizard}) {
             <div className={"flex space-around align-center mt-2"}>
               <img src={planOptions[plan]["link"]} alt={`You've chosen ${plan} plan`} className={"image-2"}/>
               <div className={"text-small left-align"}>
-                <div className={"plan_switcher"}>
+                <div className={"plan_switcher relative"}>
                   <span className={"annual dark"}>Annual</span>
                   <span>
                     <label htmlFor={"annual_perpetual_plan"}>
