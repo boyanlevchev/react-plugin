@@ -8,12 +8,12 @@ function App() {
   const [wizardOpen, setWizardOpen] = useState(true);
 
   const closeWizard = () => {
-    setWizardOpen(false)
-    const target = document.getElementById('target')
-    if (target) {
-      target.classList.add('transition');
-      document.getElementById('target').classList.add('shadow-red');
-    }
+    setWizardOpen(false);
+    // const target = document.getElementById('target')
+    // if (target) {
+    //   target.classList.add('transition');
+    //   document.getElementById('target').classList.add('shadow-red');
+    // }
   }
 
   return (

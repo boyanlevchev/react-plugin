@@ -3,6 +3,8 @@ import { motion, AnimatePresence } from 'framer-motion';
 import Button from './button';
 import OptionButton from './option_button';
 
+// import FirstImage from '../images/first_image.svg';
+
 function Popup({closeWizard}) {
   const [page, setPage] = useState(1);
 
@@ -19,7 +21,7 @@ function Popup({closeWizard}) {
 
   const [ pages ] = useState([
     {
-      title: "Hey there!",
+      image: "https://staging.froala.com/wp-content/uploads/2021/02/first_image.svg",
       subtitle: "Let's help you find the right plan."
     },
     {
@@ -39,23 +41,48 @@ function Popup({closeWizard}) {
     }
   ])
 
-  // useEffect(() => {
+  const [ planOptions ] = useState({
+    "Basic": {
+      "link": "https://staging.froala.com/wp-content/uploads/2021/02/basic.svg",
+      "list": [
+        <p><span classnNme={"check-mark"}></span>Unlimited users</p>,
+        <p><span classnNme={"check-mark"}></span>Up to 3 domains</p>,
+        <p><span classnNme={"check-mark"}></span>Single product</p>,
+        <p><span classnNme={"check-mark"}></span>Community Support</p>,
+        <p><span classnNme={"cross-mark"}></span>No source code access</p>,
+        <p><span classnNme={"cross-mark"}></span>No redistribution rights</p>
+      ]
+    },
+    "Pro": {
+      "link": "https://staging.froala.com/wp-content/uploads/2021/02/first_image.svg",
+      "list": [
+        <p><span classnNme={"check-mark"}></span>Unlimited users</p>,
+        <p><span classnNme={"check-mark"}></span>Unlimited domains</p>,
+        <p><span classnNme={"check-mark"}></span>Single product</p>,
+        <p><span classnNme={"check-mark"}></span>Full source code access</p>,
+        <p><span classnNme={"check-mark"}></span>Professional Support</p>,
+        <p><span classnNme={"cross-mark"}></span>No redistribution rights</p>
+      ]
+    },
+    "Enterprise": {
+      "link": "https://staging.froala.com/wp-content/uploads/2021/02/ent.svg",
+      "list": [
+        <p><span classnNme={"check-mark"}></span>Unlimited users</p>,
+        <p><span classnNme={"check-mark"}></span>Unlimited domains</p>,
+        <p><span classnNme={"check-mark"}></span>Unlimited products</p>,
+        <p><span classnNme={"check-mark"}></span>Full source code access</p>,
+        <p><span classnNme={"check-mark"}></span>Complete redistribution rights</p>,
+        <p><span classnNme={"check-mark"}></span>Professional Support</p>
+      ]
+    }
+  })
 
-  // },[answers])
-
-  // const [ licenses ] = useState({
-  //   Basic: [
-
-  //   ],
-  //   Pro: [],
-  //   Enterprise: []
-  // })
   const getPlan = () => {
-    if (answers.redistribution === true) {
+    if (answers.hosting === true) {
       setPlan("Enterprise");
-    } else if (answers.monetized === true) {
+    } else if (answers.redistribution === true) {
       setPlan("Pro");
-    } else if (answers.hosting === true) {
+    } else if (answers.monetized === true) {
       setPlan("Pro");
     } else {
       setPlan("Basic");
@@ -97,6 +124,8 @@ function Popup({closeWizard}) {
       transition={{ type: "spring", duration: 1.2, bounce: 0.6}}
       className={"wizard-main-window-border"}>
       <div className={"wizard-main-window flex column space-between"}>
+        <button onClick={closeWizard} onTouchEnd={closeWizard} className={"wizard-close-button"}>X</button>
+
         {pages.map( (p, i) => {
           if (page === i + 1) {
             return  <AnimatePresence key={page}>
@@ -107,10 +136,17 @@ function Popup({closeWizard}) {
                         transition={{ type: "spring", duration: 1.2, bounce: 0.6}}
                         className={"wizard-page flex column align-center space-around h-100"}
                       >
-                        <h3>{p.title}</h3>
+
+                        {p.title &&
+                          <h3>{p.title}</h3>
+                        }
 
                         {p.subtitle &&
-                          <h4>{p.subtitle}</h4>
+                          <h4 className={"wizard-options-subtitle"}>{p.subtitle}</h4>
+                        }
+
+                        {p.image &&
+                          <img src={p.image} className={`image-${i+1}`} alt={`Froala pricing plan wizard step ${i + 1}`}/>
                         }
 
                         {p.options &&
@@ -134,15 +170,29 @@ function Popup({closeWizard}) {
             >
             <h3>The plan most suited to your needs is</h3>
             <h1>{plan}</h1>
+            <div className={"d-flex-around"}>
+              <img src={planOptions[plan]["link"]} alt={`You've chosen ${plan} plan`} className={"image-1"}/>
+              <div class={"text-small left-align"}>
+                <p>{plan} plan highlights</p>
+                <ul>
+                  {planOptions[plan]["list"].map( listItem => {
+                    return <li>{listItem}</li>
+                  } )}
+                </ul>
+              </div>
+            </div>
           </motion.div>
         }
 
-        <div className={`flex ${ page === 1 ? "justify-center" : "space-between"}`}>
+        <div className={"flex space-between"}>
           { page === 1 &&
+            <React.Fragment>
+              <Button action={closeWizard} text={"Remind me later"}/>
               <Button action={() => paginate(1)} text={"Begin"}/>
+            </React.Fragment>
           }
           { page > 1 &&
-              <Button action={() => paginate(-1)} text={"Previous"}/>
+            <Button action={() => paginate(-1)} text={"Previous"}/>
           }
           { page < 5 && page > 1 &&
             <Button action={() => paginate(1)} isDisabled={isDisabled} text={"Next"}/>

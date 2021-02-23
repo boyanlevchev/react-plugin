@@ -64,7 +64,11 @@
   transition:  0.2s;
 }
 
-.shadow-red {
-  box-shadow: 1px 1px 25px 16px yellow;
+.react-pricing-wizard .d-flex-around {
+  display: flex;
+  justify-content: space-around;
 }
 
+.react-pricing-wizard .left-align {
+  text-align: left;
+}
