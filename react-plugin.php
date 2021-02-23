@@ -82,14 +82,23 @@ class RpLoadReactApp {
     if(is_string($limit_callback) && !$limit_callback()  )
       return;
 
-    // if( !is_page( $page = "wysiwyg-editor/pricing23" ))
+    // if( !is_page( $page = 'wysiwyg-editor/pricing23' ))
+
     //     return;
 
     // Get assets links.
     $assets_files = $this->get_assets_files();
 
-    $js_files  = array_filter( $assets_files,  fn($file_string) => pathinfo( $file_string, PATHINFO_EXTENSION ) === 'js');
-    $css_files  = array_filter( $assets_files,  fn($file_string) => pathinfo( $file_string, PATHINFO_EXTENSION ) === 'css');
+    function js_function($file_string = null) {
+      return pathinfo( $file_string, PATHINFO_EXTENSION ) === 'js';
+    }
+
+    function css_function($file_string = null) {
+      return pathinfo( $file_string, PATHINFO_EXTENSION ) === 'css';
+    }
+
+    $js_files  = array_filter( $assets_files, js_function );
+    $css_files  = array_filter( $assets_files, css_function );
 
     // Load css files.
     foreach ( $css_files as $index => $css_file ) {
