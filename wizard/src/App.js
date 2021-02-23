@@ -20,11 +20,9 @@ function App() {
   return (
     <div className="App underlay-container react-pricing-wizard">
 
-      <AnimatePresence>
-        {wizardOpen &&
-          <Popup closeWizard={closeWizard}/>
-        }
-      </AnimatePresence>
+      {wizardOpen &&
+        <Popup closeWizard={closeWizard}/>
+      }
     </div>
   );
 }

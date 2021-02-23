@@ -52,6 +52,10 @@
   margin-top: 0.3rem;
 }
 
+.react-pricing-wizard .my-1 {
+  margin-top: 0rem;
+}
+
 .react-pricing-wizard .h-100 {
   height:  100%;
 }
@@ -91,7 +95,7 @@
 }
 
 .react-pricing-wizard .small-switcher {
-  transform: scale(0.9);
+  transform: scale(0.7);
 }
 
 

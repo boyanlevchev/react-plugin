@@ -176,10 +176,10 @@ function Popup({closeWizard}) {
             <div className={"flex space-around align-center mt-2"}>
               <img src={planOptions[plan]["link"]} alt={`You've chosen ${plan} plan`} className={"image-2"}/>
               <div className={"text-small left-align"}>
-                <div className={"plan_switcher"}>
+                <div className={"plan_switcher small-switcher flex align-center"}>
                   <span className={"annual dark"}>Annual</span>
-                  <span className={"small-switcher"}>
-                    <label className={"switch"} htmlFor={"annual_perpetual_plan"}>
+                  <span className={" "}>
+                    <label className={"switch m-0"} htmlFor={"annual_perpetual_plan"}>
                       <input type={"checkbox"} name={"annual_perpetual_plan"} id={"annual_perpetual_plan"}/>
                       <span className={"slider round"}></span>
                     </label>
