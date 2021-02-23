@@ -5,7 +5,7 @@ import OptionButton from './option_button';
 
 // import FirstImage from '../images/first_image.svg';
 
-function Popup({closeWizard}) {
+function Popup({closeWizard, term}) {
   const [page, setPage] = useState(1);
 
   const [trueCheckmark, setTrueCheckmark] = useState(false);
@@ -45,7 +45,8 @@ function Popup({closeWizard}) {
     "Basic": {
       "image": "https://staging.froala.com/wp-content/uploads/2021/02/basic.svg",
       "price": "$199",
-      "link": "https://store.froala.com/buy-now/wysiwyg-editor/basic-term-license/",
+      "annual_link": "https://store.froala.com/buy-now/wysiwyg-editor/basic-term-license/",
+      "perpetual_link": "https://store.froala.com/buy-now/wysiwyg-editor/basic-license/",
       "list": [
         [true, <p>Unlimited users</p>],
         [true, <p>Up to 3 domains</p>],
@@ -58,7 +59,8 @@ function Popup({closeWizard}) {
     "Pro": {
       "image": "https://staging.froala.com/wp-content/uploads/2021/02/first_image.svg",
       "price": "$899",
-      "link": "https://store.froala.com/buy-now/wysiwyg-editor/pro-term-license/",
+      "annual_link": "https://store.froala.com/buy-now/wysiwyg-editor/pro-term-license/",
+      "perpetual_link": "https://store.froala.com/buy-now/wysiwyg-editor/pro-license/",
       "list": [
         [true, <p>Unlimited users</p>],
         [true, <p>Unlimited domains</p>],
@@ -71,7 +73,8 @@ function Popup({closeWizard}) {
     "Enterprise": {
       "image": "https://staging.froala.com/wp-content/uploads/2021/02/ent.svg",
       "price": "$1,999",
-      "link": "https://store.froala.com/buy-now/wysiwyg-editor/enterprise-term-license/",
+      "annual_link": "https://store.froala.com/buy-now/wysiwyg-editor/enterprise-term-license/",
+      "perpetual_link": "https://store.froala.com/buy-now/wysiwyg-editor/enterprise-license/",
       "list": [
         [true, <p>Unlimited users</p>],
         [true, <p>Unlimited domains</p>],
@@ -203,10 +206,8 @@ function Popup({closeWizard}) {
                 </ul>
                 <a
                   className={"buy-now-link wizard-buy-now-button"}
-                  href={planOptions[plan]["link"]}
+                  href={term === "perpetual" ? planOptions[plan]["perpetual_link"] : planOptions[plan]["annual_link"]}
                   rel={"nofollow"}
-                  data-href-perpetual={planOptions[plan]["link"]}
-                  data-href-annual={planOptions[plan]["link"]}
                   >Buy now</a>
               </div>
             </div>
