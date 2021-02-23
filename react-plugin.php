@@ -82,8 +82,8 @@ class RpLoadReactApp {
     if(is_string($limit_callback) && !$limit_callback()  )
       return;
 
-    if( !is_page( $page = "wysiwyg-editor/pricing23" ))
-        return;
+    // if( !is_page( $page = "wysiwyg-editor/pricing23" ))
+    //     return;
 
     // Get assets links.
     $assets_files = $this->get_assets_files();
