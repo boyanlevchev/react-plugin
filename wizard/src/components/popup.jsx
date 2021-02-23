@@ -179,8 +179,10 @@ function Popup({closeWizard}) {
             <div className={"flex space-around align-center mt-2 h-100"}>
               <img src={planOptions[plan]["link"]} alt={`You've chosen ${plan} plan`} className={"image-2"}/>
               <div className={"text-small left-align flex column align-center"}>
-                <span className={`${plan.toLowerCase()}_plan_conatiner`}>{planOptions[plan]["price"]}</span>
-                <span classname={"basic_plan_type"}> / year</span>
+                <div>
+                  <span className={`${plan.toLowerCase()}_plan_conatiner`}>{planOptions[plan]["price"]}</span>
+                  <span classname={"basic_plan_type"}> / year</span>
+                </div>
                 <div className={"plan_switcher small-switcher flex align-center my-1"}>
                   <span className={"annual dark"}>Annual</span>
                   <span>
