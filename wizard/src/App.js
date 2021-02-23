@@ -9,11 +9,6 @@ function App() {
 
   const closeWizard = () => {
     setWizardOpen(false)
-    const target = document.getElementById('target')
-    if (target) {
-      target.classList.add('transition');
-      document.getElementById('target').classList.add('shadow-red');
-    }
   }
 
   return (

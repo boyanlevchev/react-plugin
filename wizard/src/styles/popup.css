@@ -6,11 +6,9 @@
   height:  400px;
   width:  500px;
   box-shadow: -2px 7px 15px -10px rgba(0,0,0,0.7);
-  /* outline: 5px solid #0198F7; */
-  /* outline-offset: -10px; */
   background-color: white;
 
-  /* position: absolute; */
+  position: relative;
 }
 
 .wizard-main-window-border {
@@ -18,14 +16,10 @@
   display:  flex;
   align-items: center;
   justify-content: center;
-  /* content: ""; */
-  /* z-index: -1; */
-/*   top: -3%;
-  left: -3%; */
+
   min-height:  430px;
   min-width:  530px;
-/*   height: 106%;
-  width: 106%; */
+
   background: rgb(1,152,247);
   background: linear-gradient(90deg, rgba(1,152,247,1) 0%, rgba(0,196,154,1) 100%);
 }
@@ -76,4 +70,8 @@
 
 .wizard-options-container {
   width: 300px;
+}
+
+.wizard-options-subtitle {
+  margin-bottom:  20px;
 }
