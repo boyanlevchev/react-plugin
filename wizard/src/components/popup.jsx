@@ -171,7 +171,7 @@ function Popup({closeWizard}) {
             transition={{ type: "spring", duration: 1.2, bounce: 0.6}}
             className={"flex column space-between"}
             >
-            <h3>The plan most suited to your needs is</h3>
+            <h3 className={"m-0"}>The plan most suited to your needs is</h3>
             <h1>{plan}</h1>
             <div className={"flex space-around align-center"}>
               <img src={planOptions[plan]["link"]} alt={`You've chosen ${plan} plan`} className={"image-2"}/>
