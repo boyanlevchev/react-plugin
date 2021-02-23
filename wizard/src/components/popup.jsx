@@ -44,6 +44,7 @@ function Popup({closeWizard}) {
   const [ planOptions ] = useState({
     "Basic": {
       "link": "https://staging.froala.com/wp-content/uploads/2021/02/basic.svg",
+      "price": "$199",
       "list": [
         [true, <p>Unlimited users</p>],
         [true, <p>Up to 3 domains</p>],
@@ -55,6 +56,7 @@ function Popup({closeWizard}) {
     },
     "Pro": {
       "link": "https://staging.froala.com/wp-content/uploads/2021/02/first_image.svg",
+      "price": "$899",
       "list": [
         [true, <p>Unlimited users</p>],
         [true, <p>Unlimited domains</p>],
@@ -66,6 +68,7 @@ function Popup({closeWizard}) {
     },
     "Enterprise": {
       "link": "https://staging.froala.com/wp-content/uploads/2021/02/ent.svg",
+      "price": "$1,999",
       "list": [
         [true, <p>Unlimited users</p>],
         [true, <p>Unlimited domains</p>],
@@ -173,12 +176,14 @@ function Popup({closeWizard}) {
             >
             <p className={"m-0"}>The plan most suited to your needs is</p>
             <p className={"text-xlarge"}>{plan}</p>
-            <div className={"flex space-around align-center mt-2"}>
+            <div className={"flex space-around align-center mt-2 h-100"}>
               <img src={planOptions[plan]["link"]} alt={`You've chosen ${plan} plan`} className={"image-2"}/>
               <div className={"text-small left-align"}>
-                <div className={"plan_switcher small-switcher flex align-center"}>
+                <span className={`${plan.toLowerCase()}_plan_conatiner`}>{plan.price}</span>
+                <span classname={"basic_plan_type"}>/ year</span>
+                <div className={"plan_switcher small-switcher flex align-center my-1"}>
                   <span className={"annual dark"}>Annual</span>
-                  <span className={" "}>
+                  <span>
                     <label className={"switch m-0"} htmlFor={"annual_perpetual_plan"}>
                       <input type={"checkbox"} name={"annual_perpetual_plan"} id={"annual_perpetual_plan"}/>
                       <span className={"slider round"}></span>
@@ -186,7 +191,6 @@ function Popup({closeWizard}) {
                   </span>
                   <span className={"perpetual light"}>Perpetual</span>
                 </div>
-                <p>{plan} plan highlights</p>
                 <ul className={"custom-ul"}>
                   {planOptions[plan]["list"].map( listItem => {
                     return <li className={"flex"}><i className={listItem[0] === true ? "fa fa-check" : "fas fa-times"}></i>{listItem[1]}</li>
