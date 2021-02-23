@@ -173,7 +173,7 @@ function Popup({closeWizard}) {
             >
             <h3 className={"m-0"}>The plan most suited to your needs is</h3>
             <h1>{plan}</h1>
-            <div className={"flex space-around align-center"}>
+            <div className={"flex space-around align-center mt-2"}>
               <img src={planOptions[plan]["link"]} alt={`You've chosen ${plan} plan`} className={"image-2"}/>
               <div className={"text-small left-align"}>
                 <p>{plan} plan highlights</p>

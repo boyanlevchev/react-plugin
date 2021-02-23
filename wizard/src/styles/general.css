@@ -48,6 +48,10 @@
   margin-right: 0.25rem;
 }
 
+.react-pricing-wizard .mt-2 {
+  margin-top: 0.3rem;
+}
+
 .react-pricing-wizard .h-100 {
   height:  100%;
 }
