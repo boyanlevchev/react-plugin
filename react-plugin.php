@@ -83,6 +83,7 @@ class RpLoadReactApp {
       return;
 
     // if( !is_page( $page = 'wysiwyg-editor/pricing23' ))
+
     //     return;
 
     // Get assets links.

@@ -41,6 +41,42 @@ function Popup({closeWizard}) {
     }
   ])
 
+  const [ planOptions ] = useState({
+    "Basic": {
+      "link": "https://staging.froala.com/wp-content/uploads/2021/02/basic.svg",
+      "list": [
+        <p><span classnNme={"check-mark"}></span>Unlimited users</p>,
+        <p><span classnNme={"check-mark"}></span>Up to 3 domains</p>,
+        <p><span classnNme={"check-mark"}></span>Single product</p>,
+        <p><span classnNme={"check-mark"}></span>Community Support</p>,
+        <p><span classnNme={"cross-mark"}></span>No source code access</p>,
+        <p><span classnNme={"cross-mark"}></span>No redistribution rights</p>
+      ]
+    },
+    "Pro": {
+      "link": "https://staging.froala.com/wp-content/uploads/2021/02/first_image.svg",
+      "list": [
+        <p><span classnNme={"check-mark"}></span>Unlimited users</p>,
+        <p><span classnNme={"check-mark"}></span>Unlimited domains</p>,
+        <p><span classnNme={"check-mark"}></span>Single product</p>,
+        <p><span classnNme={"check-mark"}></span>Full source code access</p>,
+        <p><span classnNme={"check-mark"}></span>Professional Support</p>,
+        <p><span classnNme={"cross-mark"}></span>No redistribution rights</p>
+      ]
+    },
+    "Enterprise": {
+      "link": "https://staging.froala.com/wp-content/uploads/2021/02/ent.svg",
+      "list": [
+        <p><span classnNme={"check-mark"}></span>Unlimited users</p>,
+        <p><span classnNme={"check-mark"}></span>Unlimited domains</p>,
+        <p><span classnNme={"check-mark"}></span>Unlimited products</p>,
+        <p><span classnNme={"check-mark"}></span>Full source code access</p>,
+        <p><span classnNme={"check-mark"}></span>Complete redistribution rights</p>,
+        <p><span classnNme={"check-mark"}></span>Professional Support</p>
+      ]
+    }
+  })
+
   const getPlan = () => {
     if (answers.hosting === true) {
       setPlan("Enterprise");
@@ -101,17 +137,17 @@ function Popup({closeWizard}) {
                         className={"wizard-page flex column align-center space-around h-100"}
                       >
 
-                        {p.image &&
-                          <img src={p.image} className={`image-${i+1}`} alt={`Froala princing plan wizard step ${i + 1}`}/>
-                        }
 
                         {p.title &&
                           <h3>{p.title}</h3>
                         }
 
-
                         {p.subtitle &&
                           <h4 className={"wizard-options-subtitle"}>{p.subtitle}</h4>
+                        }
+
+                        {p.image &&
+                          <img src={p.image} className={`image-${i+1}`} alt={`Froala pricing plan wizard step ${i + 1}`}/>
                         }
 
 
@@ -136,13 +172,24 @@ function Popup({closeWizard}) {
             >
             <h3>The plan most suited to your needs is</h3>
             <h1>{plan}</h1>
+            <div className={"d-flex-around"}>
+              <img src={planOptions[plan]["link"]} alt={`You've chosen ${plan} plan`} className={"image-1"}/>
+              <div class={"text-small left-align"}>
+                <p>{plan} plan highlights</p>
+                <ul>
+                  {planOptions[plan]["list"].map( listItem => {
+                    return <li>{listItem}</li>
+                  } )}
+                </ul>
+              </div>
+            </div>
           </motion.div>
         }
 
         <div className={"flex space-between"}>
           { page === 1 &&
             <React.Fragment>
-              <Button action={closeWizard} text={"Not now"}/>
+              <Button action={closeWizard} text={"Remind me later"}/>
               <Button action={() => paginate(1)} text={"Begin"}/>
             </React.Fragment>
           }
