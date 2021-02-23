@@ -45,34 +45,34 @@ function Popup({closeWizard}) {
     "Basic": {
       "link": "https://staging.froala.com/wp-content/uploads/2021/02/basic.svg",
       "list": [
-        <p><span classnNme={"check-mark"}></span>Unlimited users</p>,
-        <p><span classnNme={"check-mark"}></span>Up to 3 domains</p>,
-        <p><span classnNme={"check-mark"}></span>Single product</p>,
-        <p><span classnNme={"check-mark"}></span>Community Support</p>,
-        <p><span classnNme={"cross-mark"}></span>No source code access</p>,
-        <p><span classnNme={"cross-mark"}></span>No redistribution rights</p>
+        [true, <p>Unlimited users</p>],
+        [true, <p>Up to 3 domains</p>],
+        [true, <p>Single product</p>],
+        [true, <p>Community Support</p>],
+        [false, <p>No source code access</p>],
+        [false, <p>No redistribution rights</p>]
       ]
     },
     "Pro": {
       "link": "https://staging.froala.com/wp-content/uploads/2021/02/first_image.svg",
       "list": [
-        <p><span classnNme={"check-mark"}></span>Unlimited users</p>,
-        <p><span classnNme={"check-mark"}></span>Unlimited domains</p>,
-        <p><span classnNme={"check-mark"}></span>Single product</p>,
-        <p><span classnNme={"check-mark"}></span>Full source code access</p>,
-        <p><span classnNme={"check-mark"}></span>Professional Support</p>,
-        <p><span classnNme={"cross-mark"}></span>No redistribution rights</p>
+        [true, <p>Unlimited users</p>],
+        [true, <p>Unlimited domains</p>],
+        [true, <p>Single product</p>],
+        [true, <p>Full source code access</p>],
+        [true, <p>Professional Support</p>],
+        [false, <p>No redistribution rights</p>]
       ]
     },
     "Enterprise": {
       "link": "https://staging.froala.com/wp-content/uploads/2021/02/ent.svg",
       "list": [
-        <p><span classnNme={"check-mark"}></span>Unlimited users</p>,
-        <p><span classnNme={"check-mark"}></span>Unlimited domains</p>,
-        <p><span classnNme={"check-mark"}></span>Unlimited products</p>,
-        <p><span classnNme={"check-mark"}></span>Full source code access</p>,
-        <p><span classnNme={"check-mark"}></span>Complete redistribution rights</p>,
-        <p><span classnNme={"check-mark"}></span>Professional Support</p>
+        [true, <p>Unlimited users</p>],
+        [true, <p>Unlimited domains</p>],
+        [true, <p>Unlimited products</p>],
+        [true, <p>Full source code access</p>],
+        [true, <p>Complete redistribution rights</p>],
+        [true, <p>Professional Support</p>]
       ]
     }
   })
@@ -171,12 +171,12 @@ function Popup({closeWizard}) {
             <h3>The plan most suited to your needs is</h3>
             <h1>{plan}</h1>
             <div className={"d-flex-around"}>
-              <img src={planOptions[plan]["link"]} alt={`You've chosen ${plan} plan`} className={"image-1"}/>
-              <div class={"text-small left-align"}>
+              <img src={planOptions[plan]["link"]} alt={`You've chosen ${plan} plan`} className={"image-2"}/>
+              <div className={"text-small left-align"}>
                 <p>{plan} plan highlights</p>
-                <ul>
+                <ul className={"custom-ul"}>
                   {planOptions[plan]["list"].map( listItem => {
-                    return <li>{listItem}</li>
+                    return <li><i className={listItem[0] === true ? "fa fa-check" : "fas fa-times"}></i>{listItem[1]}</li>
                   } )}
                 </ul>
               </div>
