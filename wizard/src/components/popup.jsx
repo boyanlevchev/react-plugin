@@ -137,6 +137,7 @@ function Popup({closeWizard}) {
                         className={"wizard-page flex column align-center space-around h-100"}
                       >
 
+
                         {p.title &&
                           <h3>{p.title}</h3>
                         }
@@ -148,6 +149,7 @@ function Popup({closeWizard}) {
                         {p.image &&
                           <img src={p.image} className={`image-${i+1}`} alt={`Froala pricing plan wizard step ${i + 1}`}/>
                         }
+
 
                         {p.options &&
                           <div className={"wizard-options-container flex space-between"}>
