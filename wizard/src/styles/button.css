@@ -39,3 +39,37 @@
 .wizard-close-button:focus {
   outline:  none;
 }
+
+.wizard-buy-now-button {
+  height: 25px;
+  /* width: 90px; */
+  border-radius: 2px;
+  background-color: rgba(255,255,255,0);
+  color: #0198F7;
+  border: 1px solid #0198F7;
+  font-size: 1rem;
+  font-weight: 400;
+  box-shadow: 0px 5px 10px -8px rgba(0,0,0,0.8);
+  padding: 0 1rem;
+  transition: 0.2s;
+}
+
+.wizard-buy-now-button:hover {
+  background-color: #0198F7;
+  color: white;
+}
+
+.wizard-buy-now-button:focus {
+  background-color: rgba(255,255,255,0);
+  color:  #0198F7;
+}
+
+.wizard-buy-now-button:active {
+  background-color: rgba(255,255,255,0);
+  color:  #0198F7;
+}
+
+.wizard-buy-now-button:visited {
+  background-color: rgba(255,255,255,0);
+  color:  #0198F7;
+}

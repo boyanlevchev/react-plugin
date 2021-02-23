@@ -43,8 +43,9 @@ function Popup({closeWizard}) {
 
   const [ planOptions ] = useState({
     "Basic": {
-      "link": "https://staging.froala.com/wp-content/uploads/2021/02/basic.svg",
+      "image": "https://staging.froala.com/wp-content/uploads/2021/02/basic.svg",
       "price": "$199",
+      "link": "https://store.froala.com/buy-now/wysiwyg-editor/basic-term-license/",
       "list": [
         [true, <p>Unlimited users</p>],
         [true, <p>Up to 3 domains</p>],
@@ -55,8 +56,9 @@ function Popup({closeWizard}) {
       ]
     },
     "Pro": {
-      "link": "https://staging.froala.com/wp-content/uploads/2021/02/first_image.svg",
+      "image": "https://staging.froala.com/wp-content/uploads/2021/02/first_image.svg",
       "price": "$899",
+      "link": "https://store.froala.com/buy-now/wysiwyg-editor/pro-term-license/",
       "list": [
         [true, <p>Unlimited users</p>],
         [true, <p>Unlimited domains</p>],
@@ -67,8 +69,9 @@ function Popup({closeWizard}) {
       ]
     },
     "Enterprise": {
-      "link": "https://staging.froala.com/wp-content/uploads/2021/02/ent.svg",
+      "image": "https://staging.froala.com/wp-content/uploads/2021/02/ent.svg",
       "price": "$1,999",
+      "link": "https://store.froala.com/buy-now/wysiwyg-editor/enterprise-term-license/",
       "list": [
         [true, <p>Unlimited users</p>],
         [true, <p>Unlimited domains</p>],
@@ -177,7 +180,7 @@ function Popup({closeWizard}) {
             <p className={"m-0"}>The plan most suited to your needs is</p>
             <p className={"text-xlarge"}>{plan}</p>
             <div className={"flex space-around align-center mt-2 h-100"}>
-              <img src={planOptions[plan]["link"]} alt={`You've chosen ${plan} plan`} className={"image-2"}/>
+              <img src={planOptions[plan]["image"]} alt={`You've chosen ${plan} plan`} className={"image-2"}/>
               <div className={"text-small left-align flex column align-center"}>
                 <div>
                   <span className={`${plan.toLowerCase()}_plan_conatiner`}>{planOptions[plan]["price"]}</span>
@@ -198,6 +201,13 @@ function Popup({closeWizard}) {
                     return <li className={"flex"}><i className={listItem[0] === true ? "fa fa-check" : "fas fa-times"}></i>{listItem[1]}</li>
                   } )}
                 </ul>
+                <a
+                  className={"buy-now-link wizard-buy-now-button"}
+                  href={planOptions[plan]["link"]}
+                  rel={"nofollow"}
+                  data-href-perpetual={planOptions[plan]["link"]}
+                  data-href-annual={planOptions[plan]["link"]}
+                  >Buy now</a>
               </div>
             </div>
           </motion.div>
