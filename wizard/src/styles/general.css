@@ -70,9 +70,21 @@
 
 .react-pricing-wizard .custom-ul {
   list-style-type: none;
-  padding-left: 2rem;
+  padding-left: 1rem;
 }
 
 .react-pricing-wizard .custom-ul p {
+  margin-left: 0.6rem;
   margin-bottom: 0.3rem;
 }
+
+.react-pricing-wizard .fa-check {
+  color: #39d5c5;
+}
+
+.react-pricing-wizard .fa-times {
+  color: #FF785A;
+}
+
+
+
