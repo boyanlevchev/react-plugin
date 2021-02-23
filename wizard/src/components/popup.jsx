@@ -172,13 +172,13 @@ function Popup({closeWizard}) {
             >
             <h3>The plan most suited to your needs is</h3>
             <h1>{plan}</h1>
-            <div className={"d-flex-around"}>
+            <div className={"flex space-around"}>
               <img src={planOptions[plan]["link"]} alt={`You've chosen ${plan} plan`} className={"image-2"}/>
               <div className={"text-small left-align"}>
                 <p>{plan} plan highlights</p>
                 <ul className={"custom-ul"}>
                   {planOptions[plan]["list"].map( listItem => {
-                    return <li><i className={listItem[0] === true ? "fa fa-check" : "fas fa-times"}></i>{listItem[1]}</li>
+                    return <li className={"flex"}><i className={listItem[0] === true ? "fa fa-check" : "fas fa-times"}></i>{listItem[1]}</li>
                   } )}
                 </ul>
               </div>
