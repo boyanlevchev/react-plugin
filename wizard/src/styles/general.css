@@ -72,3 +72,12 @@
 .react-pricing-wizard .left-align {
   text-align: left;
 }
+
+.react-pricing-wizard .custom-ul {
+  list-style-type: none;
+  padding-left: 2rem;
+}
+
+.react-pricing-wizard .custom-ul p {
+  margin-bottom: 0.3rem;
+}
