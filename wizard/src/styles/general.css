@@ -90,5 +90,8 @@
   color: #FF785A;
 }
 
+.react-pricing-wizard .small-switcher {
+  transform: scale(0.9);
+}
 
 

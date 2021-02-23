@@ -178,7 +178,7 @@ function Popup({closeWizard}) {
               <div className={"text-small left-align"}>
                 <div className={"plan_switcher"}>
                   <span className={"annual dark"}>Annual</span>
-                  <span>
+                  <span className={"small-switcher"}>
                     <label className={"switch"} htmlFor={"annual_perpetual_plan"}>
                       <input type={"checkbox"} name={"annual_perpetual_plan"} id={"annual_perpetual_plan"}/>
                       <span className={"slider round"}></span>
