@@ -59,12 +59,8 @@
   color: white;
 }
 
-.wizard-buy-now-button:active {
-  background-color: rgba(255,255,255,0);
-  color:  #0198F7;
+.wizard-buy-now-button:focus {
+  background-color: #0198F7;
+  color: white;
 }
 
-.wizard-buy-now-button:visited {
-  background-color: rgba(255,255,255,0);
-  color:  #0198F7;
-}

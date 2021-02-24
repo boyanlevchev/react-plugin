@@ -1,9 +1,9 @@
 .wizard-main-window {
   padding: 2rem;
   pointer-events: auto;
-  max-height:  400px;
+  max-height:  430px;
   max-width:  85vw;
-  height:  400px;
+  height:  430px;
   width:  500px;
   box-shadow: -2px 7px 15px -10px rgba(0,0,0,0.7);
   background-color: white;
@@ -17,7 +17,7 @@
   align-items: center;
   justify-content: center;
 
-  height:  430px;
+  height:  460px;
   width:  530px;
 
   max-width:  90vw;
