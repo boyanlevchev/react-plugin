@@ -89,7 +89,7 @@ function Popup({closeWizard, term}) {
   const getPlan = () => {
     if (answers.hosting === true) {
       setPlan("Enterprise");
-    } else if (answers.redistribution === true) {
+    } else if (answers.redistribution === false) {
       setPlan("Pro");
     } else if (answers.monetized === true) {
       setPlan("Pro");
