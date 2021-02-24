@@ -23,7 +23,7 @@ function App() {
 
   useEffect(() => {
     if (y && y > 400 && alreadyOpened === false) {
-      setWizardOpen(true);
+      setTimeout(() => setWizardOpen(true), 5000);
       setAlreadyOpened(true);
     }
   },[y])

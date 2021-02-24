@@ -219,7 +219,7 @@ function Popup({closeWizard, term}) {
         <div className={"flex space-between"}>
           { page === 1 &&
             <React.Fragment>
-              <Button action={closeWizard} text={"Remind me later"}/>
+              <motion.a className={"wizard-remind-me-later"} href onClick={e => {e.preventDefault(); closeWizard();}} >Remind me later</motion.a>
               <Button action={() => paginate(1)} text={"Begin"}/>
             </React.Fragment>
           }
