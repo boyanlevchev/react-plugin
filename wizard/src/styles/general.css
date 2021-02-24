@@ -52,6 +52,10 @@
   margin-top: 0.3rem;
 }
 
+.react-pricing-wizard .mt-1 {
+  margin-top: 1rem;
+}
+
 .react-pricing-wizard .my-1 {
   margin-top: 0.6rem;
   margin-bottom: 1rem;
@@ -83,7 +87,6 @@
 
 .react-pricing-wizard .custom-ul {
   list-style-type: none;
-  padding-left: 1rem;
 }
 
 .react-pricing-wizard .custom-ul p {

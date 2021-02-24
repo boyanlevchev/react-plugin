@@ -181,7 +181,7 @@ function Popup({closeWizard, term}) {
             className={"flex column space-between"}
             >
             <p className={"m-0"}>The plan most suited to your needs is</p>
-            <p className={"text-xlarge"}>{plan}</p>
+            <p className={"text-xlarge mt-1"}>{plan}</p>
             <div className={"flex space-around align-center mt-2 h-100"}>
               <img src={planOptions[plan]["image"]} alt={`You've chosen ${plan} plan`} className={"image-2"}/>
               <div className={"text-small left-align flex column align-center"}>
