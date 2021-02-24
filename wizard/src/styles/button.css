@@ -28,13 +28,14 @@
 .wizard-remind-me-later {
   font-size: 1rem;
   font-weight: 400;
-  color: #0198F7;
-  text-decoration: none;
+  color: #0198F7 !important;
+  text-decoration: none !important;
   border: none;
+  cursor: pointer;
 }
 
 .wizard-remind-me-later:hover {
-  text-decoration: underline;
+  text-decoration: underline !important;
 }
 
 .wizard-close-button {
@@ -77,6 +78,7 @@
 
 .wizard-buy-now-button:hover {
   transform: scale(1.1);
+  color: white;
 }
 
 .wizard-buy-now-button:focus {
