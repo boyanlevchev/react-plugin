@@ -1,11 +1,13 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import Button from './button';
 import OptionButton from './option_button';
 
-// import FirstImage from '../images/first_image.svg';
+
 
 function Popup({closeWizard, term}) {
+
+
   const [page, setPage] = useState(1);
 
   const [trueCheckmark, setTrueCheckmark] = useState(false);
