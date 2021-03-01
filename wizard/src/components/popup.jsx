@@ -23,7 +23,7 @@ function Popup({closeWizard, term}) {
 
   const [ pages ] = useState([
     {
-      image: "https://staging.froala.com/wp-content/uploads/2021/02/first_image.svg",
+      image: "https://staging.froala.com/wp-content/uploads/2021/03/first_image.svg",
       subtitle: "Let's help you find the right plan."
     },
     {
@@ -59,7 +59,7 @@ function Popup({closeWizard, term}) {
       ]
     },
     "Pro": {
-      "image": "https://staging.froala.com/wp-content/uploads/2021/02/first_image.svg",
+      "image": "https://staging.froala.com/wp-content/uploads/2021/03/first_image.svg",
       "price": "$899",
       "annual_link": "https://store.froala.com/buy-now/wysiwyg-editor/pro-term-license/",
       "perpetual_link": "https://store.froala.com/buy-now/wysiwyg-editor/pro-license/",
