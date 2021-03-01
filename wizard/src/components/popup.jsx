@@ -23,7 +23,7 @@ function Popup({closeWizard, term}) {
 
   const [ pages ] = useState([
     {
-      image: "https://staging.froala.com/wp-content/uploads/2021/03/first_image.svg",
+      image: "https://froala.com/wp-content/uploads/2021/03/first_image.svg",
       subtitle: "Let's help you find the right plan."
     },
     {
@@ -45,7 +45,7 @@ function Popup({closeWizard, term}) {
 
   const [ planOptions ] = useState({
     "Basic": {
-      "image": "https://staging.froala.com/wp-content/uploads/2021/02/basic.svg",
+      "image": "https://froala.com/wp-content/uploads/2021/03/basic.svg",
       "price": "$199",
       "annual_link": "https://store.froala.com/buy-now/wysiwyg-editor/basic-term-license/",
       "perpetual_link": "https://store.froala.com/buy-now/wysiwyg-editor/basic-license/",
@@ -59,7 +59,7 @@ function Popup({closeWizard, term}) {
       ]
     },
     "Pro": {
-      "image": "https://staging.froala.com/wp-content/uploads/2021/03/first_image.svg",
+      "image": "https://froala.com/wp-content/uploads/2021/03/first_image.svg",
       "price": "$899",
       "annual_link": "https://store.froala.com/buy-now/wysiwyg-editor/pro-term-license/",
       "perpetual_link": "https://store.froala.com/buy-now/wysiwyg-editor/pro-license/",
@@ -73,7 +73,7 @@ function Popup({closeWizard, term}) {
       ]
     },
     "Enterprise": {
-      "image": "https://staging.froala.com/wp-content/uploads/2021/02/ent.svg",
+      "image": "https://froala.com/wp-content/uploads/2021/03/ent.svg",
       "price": "$1,999",
       "annual_link": "https://store.froala.com/buy-now/wysiwyg-editor/enterprise-term-license/",
       "perpetual_link": "https://store.froala.com/buy-now/wysiwyg-editor/enterprise-license/",
