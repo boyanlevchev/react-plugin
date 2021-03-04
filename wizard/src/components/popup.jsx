@@ -223,7 +223,7 @@ function Popup({closeWizard, term}) {
           { page === 1 &&
             <React.Fragment>
               <motion.a className={"wizard-remind-me-later"} href onClick={e => {e.preventDefault(); closeWizard();}} id={"react-wizard-remind-me-later-button"}>Remind me later</motion.a>
-              <Button action={() => paginate(1)} text={"Begin"}/>
+              <Button action={() => paginate(1)} text={"Begin"} id={"react-wizard-begin-button"}/>
             </React.Fragment>
           }
           { page > 1 &&
