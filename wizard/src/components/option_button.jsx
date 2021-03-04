@@ -9,6 +9,7 @@ function OptionButton({handleSelection, answer, option, bool, checked}) {
   return(
     <motion.button
       type={"button"}
+      id={`react-wizard-option-button-${option.toLowerCase().replace(" ", "-")}`}
       className={"wizard-options-toggle flex align-center justify-center"}
       onClick={ e => handleSelection( answer, bool ) }>
       <p className={"h-100 w-100 flex align-center justify-center m-0"}>

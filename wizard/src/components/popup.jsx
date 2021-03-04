@@ -135,7 +135,7 @@ function Popup({closeWizard, term}) {
       transition={{ type: "spring", duration: 1.2, bounce: 0.6}}
       className={"wizard-main-window-border"}>
       <div className={"wizard-main-window flex column space-between"}>
-        <button onClick={closeWizard} onTouchEnd={closeWizard} className={"wizard-close-button"}>X</button>
+        <button onClick={closeWizard} onTouchEnd={closeWizard} className={"wizard-close-button"} id={"react-wizard-close-button"}>X</button>
 
         {pages.map( (p, i) => {
           if (page === i + 1) {
@@ -210,6 +210,9 @@ function Popup({closeWizard, term}) {
                   className={"buy-now-link wizard-buy-now-button"}
                   href={term === "perpetual" ? planOptions[plan]["perpetual_link"] : planOptions[plan]["annual_link"]}
                   rel={"nofollow"}
+                  data-information={plan}
+                  data-term={term}
+                  id={"react-wizard-buy-now-link"}
                   >Buy now</a>
               </div>
             </div>
@@ -219,7 +222,7 @@ function Popup({closeWizard, term}) {
         <div className={"flex space-between"}>
           { page === 1 &&
             <React.Fragment>
-              <motion.a className={"wizard-remind-me-later"} href onClick={e => {e.preventDefault(); closeWizard();}} >Remind me later</motion.a>
+              <motion.a className={"wizard-remind-me-later"} href onClick={e => {e.preventDefault(); closeWizard();}} id={"react-wizard-remind-me-later-button"}>Remind me later</motion.a>
               <Button action={() => paginate(1)} text={"Begin"}/>
             </React.Fragment>
           }
@@ -230,7 +233,7 @@ function Popup({closeWizard, term}) {
             <Button action={() => paginate(1)} isDisabled={isDisabled} text={"Next"}/>
           }
           { page === 5 &&
-            <Button action={closeWizard} text={"Finish"}/>
+            <Button action={closeWizard} text={"Finish"} id={"react-wizard-finish-button"}/>
           }
         </div>
       </div>
